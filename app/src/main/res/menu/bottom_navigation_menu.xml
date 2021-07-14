@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/pageSmoothie"
+        android:enabled="true"
+        android:iconTint="@color/colorPink"
+        android:icon="@drawable/ic_smoothie"
+        android:title="@string/text_label_menu_smoothie"/>
+    <item
+        android:id="@+id/pageFavourite"
+        android:enabled="true"
+        android:iconTint="@color/colorPink"
+        android:icon="@drawable/ic_favourite_heart"
+        android:title="@string/text_label_menu_favourites"/>
+    <item
+        android:id="@+id/pageDaily"
+        android:enabled="true"
+        android:iconTint="@color/colorPink"
+        android:icon="@drawable/ic_daily"
+        android:title="@string/text_label_menu_daily"/>
+</menu>
