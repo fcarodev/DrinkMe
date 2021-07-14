@@ -17,40 +17,14 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class SplashActivity : AppCompatActivity() {
+    lateinit var presenter: SplashPresenter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        presenter = SplashPresenter(this)
+        presenter.onCreate()
 
-       // goToHome()
-        RestClientSmoothie().get()?.getCategories()?.enqueue(object : Callback<MutableList<Category>>{
-            override fun onResponse(
-                call: Call<MutableList<Category>>,
-                response: Response<MutableList<Category>>
-            ) {
-                if (response.isSuccessful){
-                    HawkManager().setCategoryList(response.body()!!)
-                    Logger.i(Gson().toJson(HawkManager().getCategoryList()))
-                }
-            }
 
-            override fun onFailure(call: Call<MutableList<Category>>, t: Throwable) {
-                Logger.i(t.message.toString())
-            }
-        })
-
-        RestClientSmoothie().get()?.getSmoothies()?.enqueue(object : Callback<MutableList<Smooth>>{
-            override fun onResponse(
-                call: Call<MutableList<Smooth>>,
-                response: Response<MutableList<Smooth>>
-            ) {
-                Logger.i(Gson().toJson( response.body()))
-            }
-
-            override fun onFailure(call: Call<MutableList<Smooth>>, t: Throwable) {
-                Logger.i(t.message.toString())
-
-            }
-        })
     }
     fun goToHome(){
         val intent =

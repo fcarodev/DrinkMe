@@ -25,6 +25,7 @@ class HomeActivity : AppCompatActivity() {
         val dailyFragment = DailyFragment()
 
         makeCurrentFragment(smoothFragment)
+
         bottomNavigationHome.setOnNavigationItemSelectedListener { item ->
             when(item.itemId) {
                 R.id.pageSmoothie ->makeCurrentFragment(smoothFragment)
