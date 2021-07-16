@@ -15,11 +15,13 @@ class SplashPresenter(private val activity:Activity):SplashContract.Presenter,Sp
     }
 
     override fun onSuccessGetCategories() {
-        TODO("Not yet implemented")
+        mRouter.navigateHome()
     }
 
     override fun onErrorGetCategories(msg:String) {
-        mView.showErrorMessage(msg)
+        //mView.showErrorMessage(msg)
+        mRouter.navigateHome()
+
     }
 
     override fun onSuccessGetSmoothies() {
@@ -27,6 +29,8 @@ class SplashPresenter(private val activity:Activity):SplashContract.Presenter,Sp
     }
 
     override fun onErrorGetSmoothies(msg:String) {
-        mView.showErrorMessage(msg)
+       // mView.showErrorMessage(msg)
+        mRouter.navigateHome()
+
     }
 }
